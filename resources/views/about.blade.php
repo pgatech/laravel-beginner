@@ -1,3 +1,3 @@
 <x-app-layout>
-    Ini adalah halaman About Page
+    This is About Page
 </x-app-layout>

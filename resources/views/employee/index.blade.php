@@ -5,7 +5,7 @@
                 Data Employee
             </div>
             <div class="col-md-3 ml-auto">
-                <button type="button" class="btn btn-primary">Add Data</button>
+                <a href="/employee/create/" type="button" class="btn btn-primary">Add Data</a>
             </div>
             <table class="table">
                 <thead>
@@ -26,7 +26,7 @@
                             <td>{{ $row->phone }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary">Edit</button>
-                                <button type="button" class="btn btn-danger">Hapus</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
                     @endforeach

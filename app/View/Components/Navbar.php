@@ -26,7 +26,8 @@ class Navbar extends Component
         $navbar = [
             'Home' => '/',
             'About' => '/about',
-            'Employee' => '/employee'
+            'Employee' => '/employee',
+            'Student' => '/students'
 
         ];
         return view('components.navbar', [

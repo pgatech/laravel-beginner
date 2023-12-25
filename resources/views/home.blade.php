@@ -1,3 +1,3 @@
 <x-app-layout>
-    Ini adalah halaman home
+    This is Homepages
 </x-app-layout>

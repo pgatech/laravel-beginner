@@ -12,4 +12,8 @@ class EmployeeController extends Controller
         $data = Employee::all();
         return view('employee.index',compact('data'));
     }
+
+    public function createdEmployee() {
+        return view('employee.create');
+    }
 }
