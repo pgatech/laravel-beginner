@@ -1,11 +1,9 @@
 <x-app-layout>
     <div class="container">
         <div class="row">
-            <div class="alert alert-primary mb-4" role="alert">
-                Data Employee
-            </div>
+            <h2>Data Employee</h2>
             <div class="col-md-3 ml-auto">
-                <a href="/employee/create/" type="button" class="btn btn-primary">Add Data</a>
+                <a href="{{ route('employee.create') }}" type="button" class="btn btn-primary">Add Employee</a>
             </div>
             <table class="table">
                 <thead>

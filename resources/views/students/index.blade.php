@@ -1,5 +1,13 @@
 <x-app-layout>
     <h2>Data Students</h2>
+    <div class="mb-3">
+        <form action="{{ route('students.index') }}" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari student..." name="search" value="{{ request('search') }}">
+                <button type="submit" class="btn btn-outline-secondary">Cari</button>
+            </div>
+        </form>
+    </div>
     <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
 
     @if ($message = Session::get('success'))
@@ -8,10 +16,11 @@
         </div>
     @endif
 
+    {{ $students->appends(request()->input())->links() }}
+
     <table class="table mt-3">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>NIM</th>
                 <th>Major</th>
@@ -21,7 +30,6 @@
         <tbody>
             @foreach ($students as $student)
                 <tr>
-                    <td>{{ $student->id }}</td>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->nim }}</td>
                     <td>{{ $student->major }}</td>

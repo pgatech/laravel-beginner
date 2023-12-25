@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::view('/about', 'about');
 
 Route::get('/employee',[EmployeeController::class,'index'])->name('employee');
-Route::get('/employee/create',[EmployeeController::class,'createdEmployee'])->name('createdEmployee');
+Route::resource('employee', EmployeeController::class);
 
 Route::get('/students',[StudentController::class,'index'])->name('student');
 Route::resource('students', StudentController::class);

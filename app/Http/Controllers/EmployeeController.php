@@ -13,7 +13,7 @@ class EmployeeController extends Controller
         return view('employee.index',compact('data'));
     }
 
-    public function createdEmployee() {
+    public function create() {
         return view('employee.create');
     }
 }

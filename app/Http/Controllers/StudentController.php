@@ -7,9 +7,18 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $students = Student::all();
+
+        // Search Students
+        $search = $request->input('search');
+        $students = Student::when($search, function ($query) use ($search) {
+            return $query->where('name', 'like', '%' . $search . '%')
+                         ->orWhere('nim', 'like', '%' . $search . '%')
+                         ->orWhere('major', 'like', '%' . $search . '%');
+        })->paginate(10); // Sesuaikan jumlah data per halaman
+
         return view('students.index', compact('students'));
     }
 
